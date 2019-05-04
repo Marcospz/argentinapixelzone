@@ -69,12 +69,12 @@
 	"width": 102,
 	"height": 48 
   },
-      "anal": {
-	"name": "anal.png",  
-	"x": 404,
-	"y": -578,
-	"width": 102,
-	"height": 48
+      "discordzone": {
+	"name": "discordzone.png",  
+	"x": -4096,
+	"y": 3220,
+	"width": 522,
+	"height": 75
   },
 	  "otro4": {
 	"name": "4.png",
