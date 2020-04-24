@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Minimapa argentino pixelzone
 // @namespace    http://tampermonkey.net/
-// @version      1.2.0
+// @version      1810
 // @description  Minimapa para pixelzone.io
-// @author       Maarcos#6160 // Discord.io/pixelxargentina
+// @author       Marcosss#5284 // Discord.io/arzone
 // @match        https://pixelzone.io/*
 // @match        http://pixelzone.io/*
 // @homepage     https://github.com/Marxarg/Marxmapa/
-// @updateURL    https://raw.githubusercontent.com/Marxarg/Marxmapa/master/minimap.user.js
-// @downloadURL  https://raw.githubusercontent.com/Marxarg/Marxmapa/master/minimap.user.js
+// @updateURL    https://raw.githubusercontent.com/Marcospz/Marxmapa/master/minimap.user.js
+// @downloadURL  https://raw.githubusercontent.com/Marcospz/Marxmapa/master/minimap.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -18,7 +18,7 @@ Number.prototype.between = function(a, b) {
   return this > min && this < max;
 };
 var range = 25;
-window.baseTepmlateUrl = 'https://raw.githubusercontent.com/Marxarg/Marxmapa/master/';
+window.baseTepmlateUrl = 'https://raw.githubusercontent.com/Marcospz/Marxmapa/master/';
 
 window.addEventListener('load', function () {
     //Regular Expression to get coordinates out of URL
@@ -151,7 +151,7 @@ window.addEventListener('load', function () {
     gameWindow.addEventListener('mousemove', function (evt) {
         if (!toggle_show)
             return;
-        coorDOM = document.getElementById("coords");
+        coorDOM = document.getElementById("coordinatesNote");
         coordsXY = coorDOM.innerHTML.split(/(\d+)/)
         //console.log(coordsXY);
         x_new = (coordsXY[0].substring(2) + coordsXY[1])*1
@@ -277,7 +277,7 @@ function loadTemplates() {
             continue
         if (!y_window.between(temp_y-range*1, temp_yb+range*1))
             continue
-        console.log("Template " + template + " is in range!");
+        //console.log("Template " + template + " is in range!");
         // console.log(x_window, y_window);
         needed_templates.push(template);
     }
@@ -332,7 +332,7 @@ function drawTemplates() {
         var newheight = zoomlevel * image_list[template].height;
         var img = image_list[template];
         ctx_minimap.drawImage(img, xoff, yoff, newwidth, newheight);
-        console.log("Drawn!");
+        //console.log("Drawn!");
     }
 }
 
